@@ -22,7 +22,7 @@ class TicTacToe
     @board.count{|token| token == "X" || token == "O"}
   end
  
-  def display_board
+  def display_boardend
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -43,5 +43,6 @@ class TicTacToe
   end
   
   def valid_move?(index)
-    index.between?(0, 8) && index.position_taken
+    index.between?(0, 8) && !position_taken(index)
+  end
 end
